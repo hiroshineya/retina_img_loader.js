@@ -1,0 +1,18 @@
+== image files ==
+/testimg/b119.jpg
+/testimg/b119_2x.jpg
+/testimg/icon2.png
+/testimg/icon2_2x.png
+
+== HTML ==
+<div class="bgimg" style="width:200px; height:200px; background-image: url(/testimg/b119.jpg);">
+</div>
+<img src="/testimg/icon2.png" />
+
+== js ==
+<script type="text/javascript" src="/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/retina_img_loader.js"></script>
+
+var loader = new RetinaImgLoader("_2x");
+loader.loadRetinaImage();
+loader.loadRetinaBgImage(".bgimg");
