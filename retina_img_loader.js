@@ -1,25 +1,25 @@
 /**
- * @fileoverview retina iPad時にretina用画像を切替える。
- *               オリジナルのsrcと同じディレクトリに *[suffix].* のファイルが存在することを想定。
- *               めんどくさいので 2x ファイルの存在チェックまでは行わない。
- *               要 jquery。
+ * @fileoverview reload image when retina iPad.
+ *               original image and 2x image files should exist same directory .
+ *               do not check existing 2x image file.
+ *               need jquery.
  * @author  neya
  * @version 0.1.0
  * @date    2012/05/08 新規作成
  */
 
 /**
- * コンストラクタ
- * @param sufx ファイルサフィックス
- *             サフィックスが "_2x" の場合、
- *             通常サイズ:abc.png -> Retinaサイズ:abc_2x.png
+ * constractor
+ * @param sufx file suffix
+ *             if suffix is "_2x"
+ *             origin:abc.png -> retina:abc_2x.png
  */
 var RetinaImgLoader = function(sufx){
     this.img2xSuffix = sufx;
 };
 
 /**
- * サフィックス付きのファイル名に変換
+ * convert filename to "with suffix".
  */
 RetinaImgLoader.prototype.convertRetinaSrc = function(orgsrc) {
     var retinasrc = orgsrc;
@@ -31,7 +31,7 @@ RetinaImgLoader.prototype.convertRetinaSrc = function(orgsrc) {
 };
 
 /**
- * imgタグのロード
+ * for all "img" tag
  */
 RetinaImgLoader.prototype.loadRetinaImage = function() {
     if(window.devicePixelRatio==2) {
@@ -44,8 +44,8 @@ RetinaImgLoader.prototype.loadRetinaImage = function() {
 };
 
 /**
- * 指定のクラスでスタイルに"background-image"が設定されているものに対してロード
- * @param clsSel 背景指定したクラス名。".class_name"
+ * for certain class tag "background-image" set .
+ * @param clsSel class name. e.x. ".class_name"
  */
 RetinaImgLoader.prototype.loadRetinaBgImage = function(clsSel) {
     if(window.devicePixelRatio==2) {
