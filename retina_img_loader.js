@@ -5,7 +5,8 @@
  *               need jquery.
  * @author  neya
  * @version 0.1.0
- * @date    2012/05/08 新規作成
+ * @date    2012/05/08 new
+ *          2012/05/09 update comments.
  */
 
 /**
