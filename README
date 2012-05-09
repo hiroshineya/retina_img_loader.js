@@ -1,3 +1,7 @@
+for static html browsing with retina iPad.
+load 2x image when retina display.
+
+
 == image files ==
 /testimg/b119.jpg
 /testimg/b119_2x.jpg
